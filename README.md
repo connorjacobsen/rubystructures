@@ -18,8 +18,8 @@ Or install it yourself as:
 
 ## Usage
 
-### Stack
-RubyStructures::Stack provides a First in, First out stack implementation.
+### Stacks
+RubyStructures::Stack provides a First in, Last out stack implementation.
 
 Create a new Stack:
 ```ruby
@@ -57,6 +57,62 @@ Take a peek at the value on the top of the Stack:
 Is the Stack empty?
 ```ruby
 @stack.empty?
+# => false
+```
+
+### Queues
+
+`RubyStructures::Queue` implements a First in, First out queue.
+
+Create a new Queue:
+```ruby
+require 'rubystructures'
+
+@queue = RubyStructures::Queue.new
+```
+
+Push a value onto the Queue:
+```ruby
+@queue.push(42)
+# => true
+```
+
+You can also use `enqueue` as an alias for push:
+```ruby
+@queue.enqueue(42)
+# => true
+```
+
+Pop a value off the Queue:
+```ruby
+@queue.pop
+# => 42
+```
+
+You can also use `dequeue` as an alias for pop:
+```ruby
+@queue.dequeue
+# => 42
+```
+
+Take a peek at the values at the front of back of the Queue without removing them:
+```ruby
+@queue.front
+# => 42
+
+@queue.back
+# => 7
+```
+
+Get the size of the Queue:
+```ruby
+@queue.size
+# => 4
+```
+
+Check whether or not the Queue is empty:
+```ruby
+@queue.empty?
 # => false
 ```
 
