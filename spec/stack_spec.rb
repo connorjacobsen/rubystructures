@@ -10,6 +10,10 @@ describe RubyStructures::Stack do
 	# Methods
 	describe "#initialize" do
 		before { @stack = RubyStructures::Stack.new }
+		it "creates a Stack object" do
+			expect(@stack.class).to eql RubyStructures::Stack
+		end
+
 		it "has size zero upon creation" do
 			expect(@stack.size).to eql 0
 		end
