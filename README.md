@@ -116,6 +116,96 @@ Check whether or not the Queue is empty:
 # => false
 ```
 
+### LinkedLists
+
+Create a new LinkedList:
+```ruby
+require 'rubystructures/linked_list'
+
+@linked_list = RubyStructures::LinkedList.new
+```
+
+Get the Node at the head of the LinkedList:
+```ruby
+@linked_list.head
+# => #<RubyStructures::Node>
+```
+
+Each `RubyStructures::Node` contains a Ruby object stored as its `:value`. Get the value stored by the `RubyStructures::Node` at the head of the LinkedList:
+```ruby
+@linked_list.head.value
+# => 42
+
+# Or, if the LinkedList is empty, returns nil.
+@linked_list.head.value
+# => nil
+```
+
+Check if the LinkedList is empty:
+```ruby
+@linked_list.empty?
+# => false
+```
+
+Insert a Node at the beginning of the LinkedList:
+```ruby
+@linked_list.prepend(42)
+```
+
+Insert a node at the end of the LinkedList:
+```ruby
+@linked_list.append(42)
+```
+
+Search for a value in the LinkedList, and if found, return its Node:
+```ruby
+@linked_list.search(42)
+# => #<RubyStructures::Node>
+
+# If the item is not found, it returns nil:
+@linked_list.search(57)
+# => nil
+```
+
+Get the Node stored at the head of the LinkedList:
+```ruby
+@linked_list.item_at_head
+# => #<RubyStructures::Node>
+```
+
+Or at the end of the LinkedList:
+```ruby
+@linked_list.item_at_tail
+# => #<RubyStructures::Node>
+```
+
+Or get the Node stored at any `index` in the LinkedList:
+```ruby
+@linked_list.item_at(5)
+# => #<RubyStructures::Node>
+```
+
+*Note: All three `item_at` methods return `nil` when trying to access a location in the LinkedList that does not exist. This occurs if the list is empty, the index is out of range, etc.*
+
+Just like we can get the Node from the head, tail, or anywhere in between, we can also delete any of those Nodes. When we remove a Node from the list, that Node is returned by the removal function:
+```ruby
+# from the beginning
+@linked_list.remove_at_head
+# => #<RubyStructures::Node>
+
+# from the end
+@linked_list.remove_at_tail
+# => #<RubyStructures::Node>
+
+# of anywhere in between
+@linked_list.remove_at(5)
+# => #<RubyStructures::Node>
+
+# Trying to delete a nonexistent Node results in nil being returned
+```
+
+### More RubyStructures coming later
+
 ## Contributing
 
 1. Fork it ( https://github.com/connorjacobsen/rubystructures/fork )
